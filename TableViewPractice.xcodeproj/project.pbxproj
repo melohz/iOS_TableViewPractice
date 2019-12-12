@@ -15,6 +15,8 @@
 		5CE71AF6239FCA87008A5938 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5CE71AF4239FCA87008A5938 /* LaunchScreen.storyboard */; };
 		5CE71B01239FCA87008A5938 /* TableViewPracticeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE71B00239FCA87008A5938 /* TableViewPracticeTests.swift */; };
 		5CE71B0C239FCA87008A5938 /* TableViewPracticeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE71B0B239FCA87008A5938 /* TableViewPracticeUITests.swift */; };
+		5CE71B1D239FE501008A5938 /* CustomViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE71B1B239FE501008A5938 /* CustomViewCell.swift */; };
+		5CE71B1E239FE501008A5938 /* CustomViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CE71B1C239FE501008A5938 /* CustomViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		5CE71B07239FCA87008A5938 /* TableViewPracticeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TableViewPracticeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CE71B0B239FCA87008A5938 /* TableViewPracticeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewPracticeUITests.swift; sourceTree = "<group>"; };
 		5CE71B0D239FCA87008A5938 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5CE71B1B239FE501008A5938 /* CustomViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewCell.swift; sourceTree = "<group>"; };
+		5CE71B1C239FE501008A5938 /* CustomViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 				5CE71AEB239FCA85008A5938 /* SceneDelegate.swift */,
 				5CE71AED239FCA85008A5938 /* ViewController.swift */,
 				5CE71AEF239FCA85008A5938 /* Main.storyboard */,
+				5CE71B1B239FE501008A5938 /* CustomViewCell.swift */,
+				5CE71B1C239FE501008A5938 /* CustomViewCell.xib */,
 				5CE71AF2239FCA87008A5938 /* Assets.xcassets */,
 				5CE71AF4239FCA87008A5938 /* LaunchScreen.storyboard */,
 				5CE71AF7239FCA87008A5938 /* Info.plist */,
@@ -233,6 +239,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CE71AF6239FCA87008A5938 /* LaunchScreen.storyboard in Resources */,
+				5CE71B1E239FE501008A5938 /* CustomViewCell.xib in Resources */,
 				5CE71AF3239FCA87008A5938 /* Assets.xcassets in Resources */,
 				5CE71AF1239FCA85008A5938 /* Main.storyboard in Resources */,
 			);
@@ -260,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5CE71AEE239FCA85008A5938 /* ViewController.swift in Sources */,
+				5CE71B1D239FE501008A5938 /* CustomViewCell.swift in Sources */,
 				5CE71AEA239FCA85008A5938 /* AppDelegate.swift in Sources */,
 				5CE71AEC239FCA85008A5938 /* SceneDelegate.swift in Sources */,
 			);

@@ -10,25 +10,33 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var customTableView: UITableView!
     let todo = ["一日やりきる", "諦めない心を持つ", "めげない"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        customTableView.register(UINib(nibName: "CustomViewCell", bundle: nil), forCellReuseIdentifier: "reusableCell")
     }
     
     // セルの個数を指定する
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return todo.count
+        return 10 // todo.count
     }
     
     // セルに値を設定する
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // セルの取得
-        let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
-        // セルにｓ表示する値を設定する
-        cell.textLabel!.text = todo[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reusableCell", for: indexPath) as! CustomViewCell
+        cell.setupCell(indexPath: indexPath)
+        // セルに表示する値を設定する
+        cell.textLabel!.text = todo[indexPath.row % 3]
         return cell
+    }
+    
+    // シンプルなセクションヘッダー
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Section: \(section)"
     }
 }
 
