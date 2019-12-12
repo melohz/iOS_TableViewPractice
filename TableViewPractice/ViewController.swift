@@ -35,8 +35,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     // シンプルなセクションヘッダー
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Section: \(section)"
+//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        return "Section: \(section)"
+//    }
+    
+    // UIViewを用いたセクションヘッダー
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let vm = UIView()
+        
+        vm.backgroundColor = UIColor.red
+        
+        return vm
     }
+    
 }
 
