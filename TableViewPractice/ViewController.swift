@@ -11,17 +11,25 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var customTableView: UITableView!
-    let todo = ["一日やりきる", "諦めない心を持つ", "めげない"]
+    var todoListContents = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         customTableView.register(UINib(nibName: "CustomViewCell", bundle: nil), forCellReuseIdentifier: "reusableCell")
+        
+        if UserDefaults.standard.object(forKey: "todoListContents") != nil {
+            todoListContents = UserDefaults.standard.object(forKey: "todoListContents") as! [String]
+        }
+    }
+    @IBAction func tapAddButton(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(identifier: "addTaskVC") as! AddTaskViewController
+        self.present(vc, animated: true, completion: nil)
     }
     
     // セルの個数を指定する
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10 // todo.count
+        todoListContents.count
     }
     
     // セルに値を設定する
@@ -30,7 +38,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cell = tableView.dequeueReusableCell(withIdentifier: "reusableCell", for: indexPath) as! CustomViewCell
         cell.setupCell(indexPath: indexPath)
         // セルに表示する値を設定する
-        cell.textLabel!.text = todo[indexPath.row % 3]
+        cell.textLabel!.text = todoListContents[indexPath.row]
         return cell
     }
     

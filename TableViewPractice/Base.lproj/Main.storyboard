@@ -15,8 +15,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o7C-5n-i8g">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="ZEH-yg-WaC"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem title="Title" id="RP6-OO-Lbj">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="SaP-tj-Vxu">
+                                            <connections>
+                                                <action selector="tapAddButton:" destination="BYZ-38-t0r" id="iRQ-yK-98y"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="w5d-ol-Uqo">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="Jtj-yT-iYd"/>
@@ -27,7 +42,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="w5d-ol-Uqo" secondAttribute="bottom" id="DMw-DD-nle"/>
-                            <constraint firstItem="w5d-ol-Uqo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="QsJ-RR-evb"/>
+                            <constraint firstItem="o7C-5n-i8g" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Ibw-cu-ckL"/>
+                            <constraint firstItem="o7C-5n-i8g" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="LWf-FQ-4Tt"/>
+                            <constraint firstItem="w5d-ol-Uqo" firstAttribute="top" secondItem="o7C-5n-i8g" secondAttribute="bottom" id="QsJ-RR-evb"/>
+                            <constraint firstItem="o7C-5n-i8g" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="XOV-8q-JCk"/>
                             <constraint firstItem="w5d-ol-Uqo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dVM-4o-k78"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="w5d-ol-Uqo" secondAttribute="trailing" id="pp7-2N-tyH"/>
                         </constraints>
@@ -40,6 +58,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="132" y="139"/>
+        </scene>
+        <!--Add Task View Controller-->
+        <scene sceneID="tKc-Lu-JMy">
+            <objects>
+                <viewController storyboardIdentifier="addTaskVC" id="ZUX-Gz-MKJ" customClass="AddTaskViewController" customModule="TableViewPractice" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jIz-Ym-9pZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xAK-mo-pEI">
+                                <rect key="frame" x="20" y="213" width="374" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I73-UD-HwQ">
+                                <rect key="frame" x="176" y="296" width="63" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add Task"/>
+                                <connections>
+                                    <action selector="tapAddTask:" destination="ZUX-Gz-MKJ" eventType="touchUpInside" id="HSK-xe-JYk"/>
+                                </connections>
+                            </button>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GvV-GB-BU8">
+                                <rect key="frame" x="0.0" y="52" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Add Task" id="Gpq-0e-B4n">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ptg-6H-Pvj">
+                                            <connections>
+                                                <action selector="tapCancelButton:" destination="ZUX-Gz-MKJ" id="gCV-e0-otg"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="COQ-FG-h4J"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="7zh-Rg-fPU"/>
+                    <connections>
+                        <outlet property="addedText" destination="xAK-mo-pEI" id="f78-os-wwk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vqk-dP-fmI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1279.7101449275362" y="138.61607142857142"/>
         </scene>
     </scenes>
 </document>
